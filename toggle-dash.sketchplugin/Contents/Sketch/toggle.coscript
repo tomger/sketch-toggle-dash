@@ -1,0 +1,31 @@
+/**
+ * Toggle Dash 1.0
+ *
+ * Copyright © 2015 Tom Germeau https://tomgermeau.com
+ * and licenced under the MIT licence. All rights not explicitly
+ * granted in the MIT license are reserved. See the included
+ * LICENSE file for more details.
+
+ */
+
+function toggleDash(context) {
+  // set doc to work around the Sketch 3.4 - 3.4.2 bug
+  // where plugins often target a non-foreground document
+  var docController = NSDocumentController.sharedDocumentController();
+  var doc = docController.currentDocument() || docController.documents().firstObject();
+  var page = [doc currentPage];
+  var artboards = [page artboards];
+  var count = [artboards count];
+
+  for (var i = 0; i < count; i++) {
+    var artboard = [artboards objectAtIndex: i];
+
+    if (artboard.isSelected()) {
+      if (artboard.name().indexOf('-') === 0) {
+        artboard.setName(artboard.name().replace(/^-+/,''));
+      } else {
+        artboard.setName('-' + artboard.name());
+      }
+    }
+  }
+}

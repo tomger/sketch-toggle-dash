@@ -1,0 +1,25 @@
+{
+  "name": "Toggle Dash",
+  "description": "Toggle dash on artboard name prefixes",
+  "author": "Tom",
+  "homepage": "https://github.com/tomger/sketch-toggle-dash",
+  "version": 1.0,
+  "identifier": "com.tomgermeau.sketch-toggle-dash",
+  "updateURL": "https://github.com/tomger/sketch-toggle-dash",
+  "compatibleVersion": 3,
+  "bundleVersion": 1,
+  "commands": [
+    {
+      "name": "Toggle dash (InVision exlude)",
+      "identifier": "toggle-dash",
+      "shortcut": "ctrl shift -",
+      "script": "toggle.coscript",
+      "handler": "toggleDash"
+    }
+  ],
+  "menu": {
+    "items": [
+      "toggle-dash"
+    ]
+  }
+}
